@@ -6,6 +6,8 @@ import (
 )
 
 func main() {
+    fileserver := http.FileServer(http.Dir("./ui/static/"))
+    http.Handle("/static/", http.StripPrefix("/static/", fileserver))
 	http.HandleFunc("/", home)
 	http.HandleFunc("/snippet/view", snippetView)
 	http.HandleFunc("/snippet/create", createSnippet)

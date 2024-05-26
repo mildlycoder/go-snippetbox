@@ -4,14 +4,23 @@
   <head>
     <meta charset="utf-8" />
     <title>{{template "title" .}} - Snippetbox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
+  <body class="bg-slate-700 text-white">
     <header>
-      <h1><a href="/">Snippetbox</a></h1>
+      <h1
+        class="text-3xl flex bg-slate-900 text-white items-center justify-center p-10"
+      >
+        <a href="/">Snippetbox</a>
+      </h1>
     </header>
     {{template "nav" .}}
-    <main>{{template "main" .}}</main>
-    <footer>Powered by <a href="https://golang.org/">Go</a></footer>
+    <main class="min-h-screen">{{template "main" .}}</main>
+    <footer
+      class="text-3xl flex bg-slate-900 text-white items-center justify-center p-10"
+    >
+      Powered by <a href="https://golang.org/">Go</a>
+    </footer>
   </body>
 </html>
 {{end}}
